@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manage Meal Options</title>
+    <link rel="stylesheet" href="css/manage_meals.css">
+    <link rel="icon" href="img/cutlery.png">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <h2>Lawrecks</h2>
+            <h4><em>(Caterer)</em></h4>
+            
+            <p class="status"><span class="online">•</span>Online</p>
+        </div>
+        <div class="sidebar-main">
+            <a href="dashboard.html">
+                <div class="sidebar-item">
+                    <h4>Dashboard</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>Today's Menu</h4>
+                </div>
+            </a>
+            <a href="manage_meals.html">
+                <div class="sidebar-item active">
+                    <h4>Manage Meal Options</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>View Orders</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>Transaction Summary</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>Edit Profile</h4>
+                </div>
+            </a>
+            <a href="index.html">
+                <div class="sidebar-item">
+                    <h4>Log Out</h4>
+                </div>
+            </a>
+        </div>
+
+    </aside>
+    <main>
+        <h1 class="align-center">Add New Meal Option</h2>
+        <div class="align-center menu-check">
+            <form action="#">
+               <div  class="create-menu-form">
+                <div class="form-group">
+                    <input type="text" id="new_menu" class="form-control" placeholder="Meal Name">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="new_price" class="form-control" placeholder="Price (&#8358;)">
+                </div>
+                <div class="form-group">
+                    <div class="upload-btn-wrapper">
+                        <button class="btn">Upload image</button>
+                        <input type="file" name="new_image" id="new_image" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="addNewMenuOption()" class="form-control form-button">ADD</button>
+                </div>
+               </div>
+            </form>
+        </div>
+        <div>
+            <h2 class="align-center">Available Meal Options</h2>
+            <div class="align-center meal-options" id="meal_options">
+                <div class="meal-options-item">
+                    <img src="img/amala_ewedu.jpg" alt="Amala and ewedu" width="180" height="180">
+                    <h3>Amala and Ewedu Soup</h3>
+                    <h4>(&#8358;600)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/eba_egusi.jpg"alt="Eba and egusi"  width="180" height="180">
+                    <h3>Eba and Egusi Soup</h3>
+                    <h4>(&#8358;550)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/fried_rice.jpg" alt="Fried Rice"  width="180" height="180">
+                    <h3>Fried Rice</h3>
+                    <h4>(&#8358;800)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/jollof_rice.jpg" alt="Jollof Rice"  width="180" height="180">
+                    <h3>Jollof Rice</h3>
+                    <h4>(&#8358;700)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/amala_ewedu.jpg" alt="Amala and ewedu" width="180" height="180">
+                    <h3>Amala and Ewedu Soup</h3>
+                    <h4>(&#8358;600)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/eba_egusi.jpg"alt="Eba and egusi"  width="180" height="180">
+                    <h3>Eba and Egusi Soup</h3>
+                    <h4>(&#8358;550)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/fried_rice.jpg" alt="Fried Rice"  width="180" height="180">
+                    <h3>Fried Rice</h3>
+                    <h4>(&#8358;800)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+                <div class="meal-options-item">
+                    <img src="img/jollof_rice.jpg" alt="Jollof Rice"  width="180" height="180">
+                    <h3>Jollof Rice</h3>
+                    <h4>(&#8358;700)</h4>
+                    <div class="edit-delete">
+                        <button id="edit-button" onclick="editItem()">Edit</button>
+                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="js/app.js"></script>
+</body>
+</html>
