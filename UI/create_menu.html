@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create menu</title>
+    <link rel="stylesheet" href="css/create_menu.css">
+    <link rel="icon" href="img/cutlery.png">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <h2>Lawrecks</h2>
+            <h4><em>(Caterer)</em></h4>
+            
+            <p class="status"><span class="online">•</span>Online</p>
+        </div>
+        <div class="sidebar-main">
+            <a href="dashboard.html">
+                <div class="sidebar-item">
+                    <h4>Dashboard</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item active">
+                    <h4>Today's Menu</h4>
+                </div>
+            </a>
+            <a href="manage_meals.html">
+                <div class="sidebar-item">
+                    <h4>Manage Meal Options</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>View Orders</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>Transaction Summary</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="sidebar-item">
+                    <h4>Edit Profile</h4>
+                </div>
+            </a>
+            <a href="index.html">
+                <div class="sidebar-item">
+                    <h4>Log Out</h4>
+                </div>
+            </a>
+        </div>
+
+    </aside>
+    <main>
+        <h1 class="align-center">Create Today's Menu</h2>
+        <div class="align-center menu-check">
+            <form action="#">
+               <div  class="create-menu-form">
+                <div class="form-group">
+                    <select type="text" id="menu_item" class="form-control" placeholder="Menu Item">
+                        <option value="">Eba and Egusi Soup</option>
+                        <option value="">Fried Rice</option>
+                        <option value="">Jollof Rice</option>
+                        <option value="">Amala and Ewedu</option>
+                        <option value="">Beans and Plantain</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="price" class="form-control" placeholder="Price (&#8358;)">
+                </div>
+                <div class="form-group">
+                    <div class="upload-btn-wrapper">
+                        <button class="btn">Upload image</button>
+                        <input type="file" name="my_image" id="my_image" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="addToMenu()" class="form-control form-button">A D D</button>
+                </div>
+               </div>
+            </form>
+        </div>
+        <div class="align-center menu_table">
+            <table id="menu_table">
+                <tr>
+                    <th>Menu Items</th>
+                    <th>Price (&#8358;)</th>
+                    <th>Image</th>
+                </tr>
+            </table>
+            <div class="align-center">
+                <button id="form_button" class="form-button">Done</button>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="js/app.js"></script>
+</body>
+</html>
