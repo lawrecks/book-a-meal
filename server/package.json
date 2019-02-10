@@ -1,0 +1,24 @@
+{
+  "name": "lawrecks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lawrecks/book-a-meal.git"
+  },
+  "author": "Lawrecks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lawrecks/book-a-meal/issues"
+  },
+  "homepage": "https://github.com/lawrecks/book-a-meal#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "pg": "^7.8.0"
+  }
+}
