@@ -9,7 +9,11 @@
     <link rel="icon" href="img/cutlery.png">
 </head>
 <body>
-    <aside class="sidebar">
+    <div class="icon"><a href="javascript:void(0);"
+        onclick="showSideBar()">
+        <span>&#9776;</span></a>
+    </div>
+    <aside class="sidebar" id="my_sidebar">
         <div class="sidebar-top">
             <h2>Lawrecks</h2>
             <h4><em>(Caterer)</em></h4>
@@ -56,7 +60,7 @@
 
     </aside>
     <main>
-        <h1 class="align-center">Add New Meal Option</h2>
+        <h1 class="align-center">Add a New Meal Option</h2>
         <div class="align-center menu-check">
             <form action="#">
                <div  class="create-menu-form">
@@ -68,8 +72,8 @@
                 </div>
                 <div class="form-group">
                     <div class="upload-btn-wrapper">
-                        <button class="btn">Upload image</button>
-                        <input type="file" name="new_image" id="new_image" class="form-control" />
+                        <button class="btn" id="up_btn">Upload image</button>
+                        <input type="file" name="new_image" id="new_image" class="form-control" onchange="changeName()" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -86,17 +90,17 @@
                     <h3>Amala and Ewedu Soup</h3>
                     <h4>(&#8358;600)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
-                    <img src="img/eba_egusi.jpg"alt="Eba and egusi"  width="180" height="180">
+                    <img src="img/eba_egusi.jpg" alt="Eba and egusi"  width="180" height="180">
                     <h3>Eba and Egusi Soup</h3>
                     <h4>(&#8358;550)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
@@ -104,8 +108,8 @@
                     <h3>Fried Rice</h3>
                     <h4>(&#8358;800)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
@@ -113,8 +117,8 @@
                     <h3>Jollof Rice</h3>
                     <h4>(&#8358;700)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
@@ -122,8 +126,8 @@
                     <h3>Amala and Ewedu Soup</h3>
                     <h4>(&#8358;600)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
@@ -131,8 +135,8 @@
                     <h3>Eba and Egusi Soup</h3>
                     <h4>(&#8358;550)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
@@ -140,8 +144,8 @@
                     <h3>Fried Rice</h3>
                     <h4>(&#8358;800)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
                     </div>
                 </div>
                 <div class="meal-options-item">
@@ -149,8 +153,45 @@
                     <h3>Jollof Rice</h3>
                     <h4>(&#8358;700)</h4>
                     <div class="edit-delete">
-                        <button id="edit-button" onclick="editItem()">Edit</button>
-                        <button id="delete-button" onclick="deleteItem()">Delete</button>
+                        <button id="edit-button" onclick="openEditModal()">Edit</button>
+                        <button id="delete-button" onclick="openDeleteModal()">Delete</button>
+                    </div>
+                </div>
+
+                <!-- Delete modal -->
+                <div id="delete_modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Are you sure you want to delete this menu option?</h3>
+                        <button id="cancel_delete" class="cancel-button">Cancel</button>
+                        <button id="do_delete" class="delete-meal">Delete</button>
+                    </div>
+                </div>
+
+                <!-- Edit modal -->
+                <div id="edit_modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form action="#">
+                            <div  class="create-menu-form">
+                                <div class="form-group">
+                                    <input type="text" id="new_menu" class="form-control" placeholder="Meal Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="new_price" class="form-control" placeholder="Price (&#8358;)">
+                                </div>
+                                <div class="form-group">
+                                    <div class="upload-btn-wrapper">
+                                        <button class="btn" id="up_btn1">Upload image</button>
+                                        <input type="file" name="new_image1" id="new_image1" class="form-control" onchange="changeName1()" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="form-control form-button" id="save_edit">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                        <button id="cancel_edit" class="cancel-button">Cancel</button>
                     </div>
                 </div>
             </div>
