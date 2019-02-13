@@ -1,6 +1,13 @@
-let express= require('express');
+// index.js
+import express from 'express';
 
-let app=express();
+const app = express();
 
-let port=3000;
-app.listen(`listening to port ${port}`)
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  return res.status(200).send({'message': 'YAY! Congratulations! Your first endpoint is working'});
+});
+
+app.listen(3000);
+console.log('app running on port ', 3000);
