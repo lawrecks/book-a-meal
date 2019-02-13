@@ -1,4 +1,4 @@
-let addToMenu = () => {
+const addToMenu = () => {
     let menu_select = document.getElementById('menu_item');
     let price = document.getElementById('price').value;
     // console.log(menu_select);
@@ -25,14 +25,14 @@ let addToMenu = () => {
     price = '';
 }
 
-let changeName = () => {
+const changeName = () => {
     let new_image = document.getElementById('new_image').files[0].name;
     let upload_button = document.getElementById('up_btn');
     // console.log(image_name);
     upload_button.innerHTML = new_image;
 
 }
-let changeName1 = () => {
+const changeName1 = () => {
     let new_image = document.getElementById('new_image1').files[0].name;
     let upload_button = document.getElementById('up_btn1');
     // console.log(image_name);
@@ -40,7 +40,7 @@ let changeName1 = () => {
 
 }
 
-let addNewMenuOption = () => {
+const addNewMenuOption = () => {
     let new_menu = document.getElementById('new_menu').value;
     let new_price = document.getElementById('new_price').value;
     let new_image = document.getElementById('new_image').files[0];
@@ -59,7 +59,7 @@ let addNewMenuOption = () => {
 
 }
 
-let showSideBar = () => {
+const showSideBar = () => {
     let side_bar = document.getElementById('my_sidebar');
     if (side_bar.style.display != 'block'){
         side_bar.style.display = 'block';
@@ -72,7 +72,7 @@ let showSideBar = () => {
 
 }
 
-let openDeleteModal = () => {
+const openDeleteModal = () => {
     let modal = document.getElementById('delete_modal');
     let close_button = document.getElementsByClassName('close')[0];
     let cancel_button = document.getElementById('cancel_delete');
@@ -95,7 +95,7 @@ let openDeleteModal = () => {
 
 }
 
-let openEditModal = () => {
+const openEditModal = () => {
     let modal = document.getElementById('edit_modal');
     let close_button = document.getElementsByClassName('close')[1];
     let cancel_button = document.getElementById('cancel_edit');
