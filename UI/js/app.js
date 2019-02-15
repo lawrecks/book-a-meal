@@ -61,14 +61,19 @@ const addNewMenuOption = () => {
 
 const showSideBar = () => {
     let side_bar = document.getElementById('my_sidebar');
+    let main_div = document.getElementById('main_div');
     if (side_bar.style.display != 'block'){
         side_bar.style.display = 'block';
-        side_bar.style.width = '43%';
+        side_bar.style.width = '58%';
     }
     else{
         side_bar.style.display = 'none';
         side_bar.style.width = '0';
     }
+    main_div.addEventListener('click', () => {
+        side_bar.style.display = 'none';
+        side_bar.style.width = '0';
+    })
 
 }
 
@@ -116,4 +121,16 @@ const openEditModal = () => {
         }
     }
 
+}
+
+const showNavItems = () => {
+    let sub_nav = document.getElementById('sub_nav');
+    let my_icon = document.getElementById('my_icon');
+    if (sub_nav.className === 'nav-sub' && my_icon.className === 'icon'){
+    sub_nav.className += ' responsive';
+    my_icon.className += ' responsive';
+    } else{
+    sub_nav.className = 'nav-sub';
+    my_icon.className = 'icon';
+    }   
 }
