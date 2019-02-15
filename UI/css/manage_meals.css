@@ -298,7 +298,7 @@ table td, table th{
         flex-wrap: wrap;
     }
     .meal-options{
-        width: 39%;
+        width: 58%;
         flex-direction: column;
     }
     .meal-options-item{
