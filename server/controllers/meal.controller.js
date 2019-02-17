@@ -28,6 +28,18 @@ class mealController {
       })
       .status(201);
   }
+
+  static getAMeal(req, res) {
+    const mealId = req.params.id;
+    // console.log(mealId);
+    const foundMeal = mealService.getAMeal(mealId);
+    return res
+      .json({
+        status: 'success',
+        data: foundMeal
+      })
+      .status(200);
+  }
 }
 
 export default mealController;
