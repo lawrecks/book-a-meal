@@ -28,6 +28,11 @@ const mealService = {
     const requiredMeal = dummyData.meals.find(meal => meal.id == mealId);
     // console.log(dummyData.meals);
     return requiredMeal || [];
+  },
+
+  updateMeal(mealId) {
+    const mealToBeUpdated = dummyData.meals.find(meal => meal.id == mealId);
+    return mealToBeUpdated;
   }
 };
 
