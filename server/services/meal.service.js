@@ -9,21 +9,9 @@ const mealService = {
       newMeal.name = meal.name;
       newMeal.size = meal.size;
       newMeal.price = meal.price;
+
+      return newMeal;
     });
-  },
-
-  addNewMeal(meal) {
-    const newMeal = meal;
-    const lengthOfMeal = dummyData.meals.length;
-    const lastMealId = dummyData.meals[lengthOfMeal - 1].id;
-    const newMealId = lastMealId + 1;
-    newMeal.id = newMealId;
-    dummyData.meals.push(meal);
-  },
-
-  getAMeal(id) {
-    const requiredMeal = dummyData.meals.find(meal => meal.id == id);
-    return requiredMeal;
   }
 };
 
