@@ -53,6 +53,15 @@ class mealController {
       data: foundMeal
     });
   }
+
+  static deleteMeal(req, res) {
+    const mealId = req.params.id;
+    const leftMeals = mealService.deleteMeal(mealId);
+    return res.json({
+      status: 'success',
+      data: leftMeals
+    });
+  }
 }
 
 export default mealController;
