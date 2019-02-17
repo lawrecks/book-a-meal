@@ -32,7 +32,17 @@ const mealService = {
 
   updateMeal(mealId) {
     const mealToBeUpdated = dummyData.meals.find(meal => meal.id == mealId);
-    return mealToBeUpdated;
+    return mealToBeUpdated || [];
+  },
+
+  deleteMeal(mealId) {
+    const mealToBeDeleted = dummyData.meals.find(meal => meal.id == mealId);
+    if (mealToBeDeleted == undefined) {
+      return 'Meal not found';
+    }
+    const mealIndex = dummyData.meals.indexOf(mealToBeDeleted);
+    dummyData.meals.splice(mealIndex, 1);
+    return dummyData.meals;
   }
 };
 

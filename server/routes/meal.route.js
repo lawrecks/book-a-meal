@@ -8,5 +8,6 @@ router.get('/', mealController.fetchAllMeals);
 router.post('/', mealController.addNewMeal);
 router.get('/:id', mealController.getAMeal);
 router.put('/:id', mealController.updateMeal);
+router.delete('/:id', mealController.deleteMeal);
 
 export default router;
