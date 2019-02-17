@@ -7,5 +7,6 @@ const router = express.Router();
 router.get('/', mealController.fetchAllMeals);
 router.post('/', mealController.addNewMeal);
 router.get('/:id', mealController.getAMeal);
+router.put('/:id', mealController.updateMeal);
 
 export default router;

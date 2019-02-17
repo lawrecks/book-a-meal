@@ -40,6 +40,19 @@ class mealController {
       })
       .status(200);
   }
+
+  static updateMeal(req, res) {
+    const mealId = req.params.id;
+    const foundMeal = mealService.updateMeal(mealId);
+    foundMeal.name = req.body.name;
+    foundMeal.size = req.body.size;
+    foundMeal.price = req.body.price;
+    // console.log(req.body);
+    return res.json({
+      status: 'success',
+      data: foundMeal
+    });
+  }
 }
 
 export default mealController;
